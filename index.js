@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateMarkdown = require('/Users/ross/bootcamp/professional-readme-generator/Develop/utils/generateMarkdown');
+const generateMarkdown = require('./Develop/utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
 
@@ -9,7 +9,7 @@ inquirer
     .prompt([
         {
             type: 'input',
-            name: 'first',
+            name: 'title',
             message: 'Type "Hello"',
         },
         {
@@ -26,7 +26,7 @@ inquirer
     ])
     .then((answers) => {
         console.log(answers);
-        writeToFile();
+        writeToFile('readmeTest.md', answers);
     }
 
     )
@@ -34,7 +34,7 @@ inquirer
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile('readmeTest.md', generateMarkdown(), (err) => {
+    fs.writeFile('readmeTest.md', generateMarkdown(data), (err) => {
         if (err) {
             console.error('Error creating the file:', err);
             return;
