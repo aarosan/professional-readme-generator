@@ -7,16 +7,16 @@ const generateMarkdown = require('./Develop/utils/generateMarkdown');
 
 inquirer
     .prompt([
-                    
-        //4th option: choices: ['', '', ''] for type: 'checkbox' && 'list'
+    
+        //Title of the project
         {
-            //Title of the project
             type: 'input',
             name: 'title',
             message: 'What is the name of your project?',
         },
+        
+        //Description Questions
         {
-            //Description Questions
             type: 'input',
             name: 'why',
             message: 'Why did you create this project?',
@@ -30,23 +30,102 @@ inquirer
             type: 'checkbox',
             name: 'languages',
             message: 'What languages did you use?',
-            choices: ['HTML', 'CSS', 'JavaScript', 'Node', 'SQL'],
+            choices: [' HTML', ' CSS', ' JavaScript', ' Node', ' SQL', 'Other'],
         },
-        // {
-        //     type: '',
-        //     name: '',
-        //     message: '',
-        // },
-        // {
-        //     type: '',
-        //     name: '',
-        //     message: '',
-        // },
-        // {
-        //     type: '',
-        //     name: '',
-        //     message: '',
-        // },
+        {
+            //added when statement to give user more flexibility
+            //asked the ai if there was a way to incorporate conditional statements
+            //in the inquirer prompt
+            type: 'input',
+            name: 'specificLanguage',
+            message: 'Enter another programming language:',
+            when: (answers) => {
+                return answers.languages.includes('Other');
+            },
+        },
+        
+        //Installation Questions
+        {
+            type: 'confirm',
+            name: 'confirmInstallation',
+            message: 'Would you like to include installation instructions?',
+            defaul: true,
+        },
+        {
+            type: 'input',
+            name: 'installation',
+            message: 'How do you install your program?',
+            when: (answers) => 
+                answers.confirmInstallation === true,
+        },
+
+        //Usage Questions
+        {
+            type: 'confirm',
+            name: 'confirmUsage',
+            message: 'Would you like to include usage instructions?',
+            defaul: true,
+        },
+        {
+            type: 'input',
+            name: 'usage',
+            message: 'How do you use your program?',
+            when: (answers) => 
+                answers.confirmUsage === true,
+        },
+
+        //License Questions
+        {
+            type: 'confirm',
+            name: 'confirmLicense',
+            message: 'Would you like to include a license?',
+            defaul: true,
+        },
+        {
+            type: 'list',
+            name: 'license',
+            message: 'What license would you like to use?',
+            choices: 
+            [
+                'Apache License 2.0',
+                'GNU General Public License v3.0',
+                'MIT License',
+                'BSD 2-Clause "Simplified" License',
+                'BSD 3-Clause "New" or "Revised" License',
+                'Boost Software License 1.0',
+                'Creative Commons Zero v1.0 Universal',
+                'Eclipse Public License 2.0',
+                'GNU Affero General Public License v3.0',
+                'GNU General Public License v2.0',
+                'GNU Lesser General Public License v2.1',
+                'Mozilla Public License 2.0',
+                'The Unlicense',
+            ],
+            when: (answers) => 
+                answers.confirmLicense === true,
+        },
+
+        //Contributing Questions
+
+        //Tests Questions
+
+        //Questions Questions
+        {
+            type: 'confirm',
+            name: 'confirmQuestions',
+            message: 'Would you like to include a questions section?',
+            defaul: true,
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'Please type your email address',
+        },
+        {
+            type: 'input',
+            name: 'github',
+            message: 'Please type your GitHub username',
+        },
     ])
     .then((answers) => {
         console.log(answers);

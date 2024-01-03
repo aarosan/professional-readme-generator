@@ -15,44 +15,78 @@ function renderLicenseLink(license) {}
 function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
+
+//I'm currently having trouble generating the markdown if the user chooses not to include
+//some of the information. I'm going to rewrite this to be conditional statements, 
+//so that the program will still create a file if the user doesn't know certain things yet
 function generateMarkdown(data) {
-  return `
-  # ${data.name}
 
-  ## Description
+  let markdown = `# ${data.title}\n\n## Description\n\n`;
 
-  ${data.why}.
-  ${data.what}.
-  In this project, I used the following coding languages: ${data.languages}.
+  if (data.why) {
+    markdown += `I created this project ${data.why}.\n`;
+  }
+  if (data.what) {
+    markdown += `This project ${data.what}.\n`;
+  }
+  if (data.languages && data.languages.length > 0) {
+    markdown += `In this project, I used the following coding languages: ${data.languages.join(', ')}.\n`;
+  }
 
-  ## Table of Contents
+  markdown += 
+  `\n## Table of Contents\n
 
   - [Installation](#installation)
   - [Usage](#usage)
   - [License](#license)
   - [Contributers](#contributers)
   - [Tests](#tests)
-  - [Questions](#questions)
+  - [Questions](#questions)\n`
 
+  if (data.confirmInstallation && data.installation) {
+    markdown += 
+    `\n<a id="installation"></a>
+    \n### Installation
+    \n${data.installation}\n`;
+  }
 
-  <a id="installation"></a>
-  ### Installation
+  if (data.confirmUsage && data.usage) {
+    markdown += 
+    `\n<a id="usage"></a>
+    \n### Usage
+    \n${data.usage}\n`;
+  }
 
-  <a id="usage"></a>
-  ### Usage
+  if (data.confirmLicense && data.license) {
+    markdown += 
+    `\n<a id="license"></a>
+    \n### License
+    \n${data.license}\n`;
+  }
 
-  <a id="license"></a>
-  ### License
+  markdown += 
+  `\n<a id="contributers"></a>
+  \n### Contributers
 
-  <a id="contributers"></a>
-  ### Contributers
+  \n<a id="tests"></a>
+  \n### Tests\n`
 
-  <a id="tests"></a>
-  ### Tests
+  if (data.confirmQuestions && data.email || data.github) {
+    markdown +=
+    `\n<a id="questions"></a>
+    \n### Questions`;
+  }
 
-  <a id="questions"></a>
-  ### Questions
-`;
+  if (data.email) {
+    markdown += `\nIf you have any questions about this application, you can reach me at ${data.email}.\n`;
+  }
+
+  if (data.github) {
+    markdown += `You can find me on GitHub using my username, ${data.github}.`
+  }
+
+  return markdown;
+
 }
 
 module.exports = generateMarkdown;
@@ -78,20 +112,24 @@ module.exports = generateMarkdown;
 
 //Areas of readme:
 
+//DONE
 // - Title of the project
   //Q: What is the project title?
 
+//DONE
 // - Description
   //Q: What is a description?
     //Can you break this down into more specific questions to get a better description from the user
     //What makes up a good description? This will be the questions you ask!
 
+//DONE
 // - Table of Contents
   //Not needed for question. This will be something I do in markdown with the topics already pre determined
   
+//
 // - Installation
   //Q: Does this need to be installed?
-  //Q: IF SO (Put conditional statement. If data.installation === true). Describe the Installation process
+  //Q: IF SO (Put conditional statement. If data.installation === true). Describe the Installation process in steps
 
 // - Usage
   //Q: How do you use this application?
