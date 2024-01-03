@@ -7,26 +7,53 @@ const generateMarkdown = require('./Develop/utils/generateMarkdown');
 
 inquirer
     .prompt([
+                    
+        //4th option: choices: ['', '', ''] for type: 'checkbox' && 'list'
         {
+            //Title of the project
             type: 'input',
             name: 'title',
-            message: 'Type "Hello"',
+            message: 'What is the name of your project?',
+        },
+        {
+            //Description Questions
+            type: 'input',
+            name: 'why',
+            message: 'Why did you create this project?',
         },
         {
             type: 'input',
-            name: 'second',
-            message: 'Type "World"',
+            name: 'what',
+            message: 'What does this project do?',
         },
         {
-            type: 'input',
-            name: 'third',
-            message: 'Type "!"',
-            //choices: ['', '', ''] for type: 'checkbox' && 'list'
+            type: 'checkbox',
+            name: 'languages',
+            message: 'What languages did you use?',
+            choices: ['HTML', 'CSS', 'JavaScript', 'Node', 'SQL'],
         },
+        // {
+        //     type: '',
+        //     name: '',
+        //     message: '',
+        // },
+        // {
+        //     type: '',
+        //     name: '',
+        //     message: '',
+        // },
+        // {
+        //     type: '',
+        //     name: '',
+        //     message: '',
+        // },
     ])
     .then((answers) => {
         console.log(answers);
-        writeToFile('readmeTest.md', answers);
+        //this was from Node Day 2 lecture
+        //Naming the file with the users answers
+        const filename = `${answers.title.toLowerCase().split(' ').join('')}README.md`;
+        writeToFile(filename, answers);
     }
 
     )
@@ -34,7 +61,7 @@ inquirer
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile('readmeTest.md', generateMarkdown(data), (err) => {
+    fs.writeFile(fileName, generateMarkdown(data), (err) => {
         if (err) {
             console.error('Error creating the file:', err);
             return;
