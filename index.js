@@ -106,7 +106,47 @@ inquirer
         },
 
         //Contributing Questions
-
+        {
+            type: 'confirm',
+            name: 'confirmContributers',
+            message: 'Would you like to include a contribution section?',
+            defaul: true,
+        },
+        {
+            type: 'confirm',
+            name: 'confirmUser',
+            message: 'Would you like to include (a) GitHub user(s) as contributors?',
+            defaul: true,
+        },
+        {
+            type: 'input',
+            name: 'user',
+            message: 'Please type the GitHub username(s) of who you would like to add as a contributor. List multiple as a string.',
+            when: (answers) => 
+                answers.confirmUser === true,
+        },
+        {
+            type: 'confirm',
+            name: 'confirmTutorial',
+            message: 'Would you like to include (an) online tutorial(s) as contributors?',
+            defaul: true,
+        },
+        {
+            type: 'input',
+            name: 'tutorial',
+            message: 'Please type the URL of the tutorial, followed by the author. List multiple as a string',
+        },
+        {
+            type: 'confirm',
+            name: 'confirmAi',
+            message: 'Would you like to include (an) AI program(s) as contributors?',
+            defaul: true,
+        },
+        {
+            type: 'input',
+            name: 'ai',
+            message: 'Please type the name of the AI program. List multiple as a string',
+        },
         //Tests Questions
 
         //Questions Questions

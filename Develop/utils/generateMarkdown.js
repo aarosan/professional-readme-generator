@@ -64,21 +64,43 @@ function generateMarkdown(data) {
     \n${data.license}\n`;
   }
 
-  markdown += 
-  `\n<a id="contributers"></a>
-  \n### Contributers
+  // markdown += 
+  // `\n<a id="contributers"></a>
+  // \n### Contributers
 
-  \n<a id="tests"></a>
-  \n### Tests\n`
+  if (data.confirmContributers && data.user || data.tutorial || data.ai) {
+    markdown += 
+    `\n<a id="contributers"></a>
+    \n### Contributers\n`;
+  }
+ 
+  if (data.confirmUser && data.user) {
+    markdown +=
+    `\nThe following GitHub user(s) contributed: ${data.user}`;
+  }
+
+  if (data.confirmTutorial && data.tutorial) {
+    markdown +=
+    `\nThe following tutorial(s) were used during the coding process: ${data.tutorial} `;
+  }
+
+  if (data.confirmAi && data.ai) {
+    markdown +=
+    `\nThe following AI program(s) were used during the coding process: ${data.ai}\n`;
+  }
+
+  // \n<a id="tests"></a>
+  // \n### Tests\n`
 
   if (data.confirmQuestions && data.email || data.github) {
     markdown +=
     `\n<a id="questions"></a>
-    \n### Questions`;
+    \n### Questions\n`;
   }
 
   if (data.email) {
-    markdown += `\nIf you have any questions about this application, you can reach me at ${data.email}.\n`;
+    markdown += `
+    \nIf you have any questions about this application, you can reach me at ${data.email}.\n`;
   }
 
   if (data.github) {
