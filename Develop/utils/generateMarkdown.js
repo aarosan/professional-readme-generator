@@ -1,6 +1,8 @@
 // WHEN I choose a license for my application from a list of options
 // THEN a badge for that license is added near the top of the README and a notice 
-// is added to the section of the README entitled License that explains which license the application is covered under
+// is added to the section of the README entitled License that explains which license 
+// the application is covered under
+
 
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
@@ -13,6 +15,10 @@ function renderLicenseLink(license) {}
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {}
+
+
+
+
 
 // TODO: Create a function to generate markdown for README
 
@@ -64,10 +70,6 @@ function generateMarkdown(data) {
     \n${data.license}\n`;
   }
 
-  // markdown += 
-  // `\n<a id="contributers"></a>
-  // \n### Contributers
-
   if (data.confirmContributers && data.user || data.tutorial || data.ai) {
     markdown += 
     `\n<a id="contributers"></a>
@@ -91,6 +93,13 @@ function generateMarkdown(data) {
 
   // \n<a id="tests"></a>
   // \n### Tests\n`
+
+  if (data.confirmTests && data.test) {
+    markdown += 
+    `\n\n<a id="tests"></a>
+    \n### Tests\n
+    \n${data.test}\n`;
+  }
 
   if (data.confirmQuestions && data.email || data.github) {
     markdown +=
@@ -132,58 +141,7 @@ module.exports = generateMarkdown;
 // THEN I am taken to the corresponding section of the README
 
 
-//Areas of readme:
-
-//DONE
-// - Title of the project
-  //Q: What is the project title?
-
-//DONE
-// - Description
-  //Q: What is a description?
-    //Can you break this down into more specific questions to get a better description from the user
-    //What makes up a good description? This will be the questions you ask!
-
-//DONE
-// - Table of Contents
-  //Not needed for question. This will be something I do in markdown with the topics already pre determined
-  
-//
-// - Installation
-  //Q: Does this need to be installed?
-  //Q: IF SO (Put conditional statement. If data.installation === true). Describe the Installation process in steps
-
-// - Usage
-  //Q: How do you use this application?
-    //Should I break this down into smaller steps? And when the user is done, they just enter a blank string and it will tell the program to go to the next section?
-
-// - License
-  //Q: What license are you using?
-    //Apache License 2.0
-    //GNU General Public License v3.0
-    //MIT License
-    //BSD 2-Clause "Simplified" License
-    //BSD 3-Clause "New" or "Revised" License
-    //Boost Software License 1.0
-    //Creative Commons Zero v1.0 Universal
-    //Eclipse Public License 2.0
-    //GNU Affero General Public License v3.0
-    //GNU General Public License v2.0
-    //GNU Lesser General Public License v2.1
-    //Mozilla Public License 2.0
-    //The Unlicense
-
-// - Contributing
-  //Q: Did another user contribute to this project?
-    //IF SO, who?
-  //Q: Did you use a tutuorial for this project?
-    //IF SO, who?
-  //Q: Did you use ai for this project?
-    //IF SO, who?
 
 // - Tests
   //Q: What are tests that are included in your project for the user to see that it is running properly/to see clearly where there is an error
 
-// - Questions
-  //Q: What is your github username?
-  //Q: What is your email address?

@@ -147,7 +147,21 @@ inquirer
             name: 'ai',
             message: 'Please type the name of the AI program. List multiple as a string',
         },
+
         //Tests Questions
+        {
+            type: 'confirm',
+            name: 'confirmTests',
+            message: 'Would you like to include a tests section?',
+            defaul: true,
+        },
+        {
+            type: 'input',
+            name: 'test',
+            message: 'How do you test your program?',
+            when: (answers) => 
+                answers.confirmTests === true,
+        },
 
         //Questions Questions
         {
@@ -174,7 +188,6 @@ inquirer
         const filename = `${answers.title.toLowerCase().split(' ').join('')}README.md`;
         writeToFile(filename, answers);
     }
-
     )
 
 
