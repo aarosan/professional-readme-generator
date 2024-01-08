@@ -1,11 +1,54 @@
-// WHEN I choose a license for my application from a list of options
-// THEN a badge for that license is added near the top of the README and a notice 
-// is added to the section of the README entitled License that explains which license 
-// the application is covered under
-
-
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
+
+//https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba (License Link Info)
+
+//License Links
+  // 'Apache License 2.0',
+    //[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+  //BLUE
+
+  // 'GNU General Public License v3.0',
+    //[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+  //BLUE
+
+  // 'MIT License',
+    //[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  //YELLOW
+
+  // 'BSD 2-Clause "Simplified" License',
+    //[![License](https://img.shields.io/badge/License-BSD_2--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)
+  //CLAUSE ORANGE
+
+  // 'BSD 3-Clause "New" or "Revised" License',
+    //[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
+  //CLAUSE BLUE
+
+  // 'Boost Software License 1.0',
+    //[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)
+  //LIGHTBLUE
+
+  // 'Creative Commons Zero v1.0 Universal',
+    //[![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)
+  //LIGHTGREY
+
+  // 'GNU Affero General Public License v3.0',
+    //[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
+  //BLUE
+
+  // 'GNU General Public License v2.0',
+    //[![License: GPL v2](https://img.shields.io/badge/License-GPL_v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
+  //BLUE
+
+  // 'Mozilla Public License 2.0',
+    //[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
+  //BRIGHTGREEN
+
+  // 'The Unlicense',
+    //[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
+  //BLUE
+
+
 function renderLicenseBadge(license) {}
 
 // TODO: Create a function that returns the license link
@@ -18,11 +61,7 @@ function renderLicenseSection(license) {}
 
 
 
-
-
-// TODO: Create a function to generate markdown for README
-
-//I'm currently having trouble generating the markdown if the user chooses not to include
+//I was having trouble generating the markdown if the user chooses not to include
 //some of the information. I'm going to rewrite this to be conditional statements, 
 //so that the program will still create a file if the user doesn't know certain things yet
 function generateMarkdown(data) {
@@ -90,9 +129,6 @@ function generateMarkdown(data) {
     markdown +=
     `\nThe following AI program(s) were used during the coding process: ${data.ai}\n`;
   }
-
-  // \n<a id="tests"></a>
-  // \n### Tests\n`
 
   if (data.confirmTests && data.test) {
     markdown += 

@@ -12,7 +12,7 @@ inquirer
         {
             type: 'input',
             name: 'title',
-            message: 'What is the name of your project?',
+            message: 'What is the title of your project?',
         },
         
         //Description Questions
@@ -94,10 +94,8 @@ inquirer
                 'BSD 3-Clause "New" or "Revised" License',
                 'Boost Software License 1.0',
                 'Creative Commons Zero v1.0 Universal',
-                'Eclipse Public License 2.0',
                 'GNU Affero General Public License v3.0',
                 'GNU General Public License v2.0',
-                'GNU Lesser General Public License v2.1',
                 'Mozilla Public License 2.0',
                 'The Unlicense',
             ],
@@ -203,20 +201,11 @@ function writeToFile(fileName, data) {
 };
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    //this is where inquirer will no go
+}
 
 // Function call to initialize app
 init();
 
 
-
-//JAN 2
-
-//THE NEXT STEP IS TO WORK ON THE GENERATE MARKDOWN. IT LOOKS LIKE THE INQUIRE PROMPT IS WORKING, AND ONCE THE ANSWERS ARE 
-//PRINTED TO THE CONSOLE, THEN THE WRITETOFILE FUNCTION IS CALLED. THE FIRST ERROR I GET IN THE TERMINAL IS IN THE GENERATE 
-//MARKDOWN FILE, AND IT ONLY GETS CALLED IN THE WRITETOFILE FUNCTION. SO THIS MEANS THAT I NEED TO GET THE TEMPLATE GOING FOR IT
-//TO CREATE A FILE. I SHOULD BE ABLE TO CREATE A TEST FILE WITH A TXT EDIT TO TEST IF THE FILE IS CREATING. YOU HAVE TO USE
-//JSON.STRINGIFY THOUGH IF YOU WANT IT TO ACTUALLY CREATE. FROM THERE, YOU NEED TO GET THE QUESTIONS FILLED OUT FOR A README
-
-//QUESTIONS FOR TOMORROW:
-//DO I NEED TO DEFINE DATA IN THE .THEN STATEMENT?
