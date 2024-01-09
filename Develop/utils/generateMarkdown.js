@@ -1,6 +1,3 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-
 //https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba (License Link Info)
 
 //License Links
@@ -49,24 +46,121 @@
   //BLUE
 
 
-function renderLicenseBadge(license) {}
+function renderLicenseBadge(license) {
+  switch (license) {
+    case 'Apache License 2.0':
+      return '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)';
+    case 'GNU General Public License v3.0':
+      return '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)';
+    case 'MIT License':
+      return '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';
+    case 'BSD 2-Clause "Simplified" License':
+      return '[![License](https://img.shields.io/badge/License-BSD_2--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)';
+    case 'BSD 3-Clause "New" or "Revised" License':
+      return '[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)';
+    case 'Boost Software License 1.0':
+      return '[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)';
+    case 'Creative Commons Zero v1.0 Universal':
+      return '[![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)';
+    case 'GNU Affero General Public License v3.0':
+      return '[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)';
+    case 'GNU General Public License v2.0':
+      return '[![License: GPL v2](https://img.shields.io/badge/License-GPL_v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)';
+    case 'Mozilla Public License 2.0':
+      return '[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)';
+    case 'The Unlicense':
+      return '[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)';
+    default:
+      return '';
+  }
+}
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+  switch (license) {
+    case 'Apache License 2.0':
+      return 'https://opensource.org/licenses/Apache-2.0';
+    case 'GNU General Public License v3.0':
+      return 'https://www.gnu.org/licenses/gpl-3.0';
+    case 'MIT License':
+      return 'https://opensource.org/licenses/MIT';
+    case 'BSD 2-Clause "Simplified" License':
+      return 'https://opensource.org/licenses/BSD-2-Clause';
+    case 'BSD 3-Clause "New" or "Revised" License':
+      return 'https://opensource.org/licenses/BSD-3-Clause';
+    case 'Boost Software License 1.0':
+      return 'https://www.boost.org/LICENSE_1_0.txt';
+    case 'Creative Commons Zero v1.0 Universal':
+      return 'http://creativecommons.org/publicdomain/zero/1.0/';
+    case 'GNU Affero General Public License v3.0':
+      return 'https://www.gnu.org/licenses/agpl-3.0';
+    case 'GNU General Public License v2.0':
+      return 'https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html';
+    case 'Mozilla Public License 2.0':
+      return 'https://opensource.org/licenses/MPL-2.0';
+    case 'The Unlicense':
+      return 'http://unlicense.org/';
+    default:
+      return '';
+  }
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+  switch (license) {
+    case 'Apache License 2.0':
+      return 'This project is licensed under the [Apache License 2.0](https://opensource.org/licenses/Apache-2.0).';
+    case 'GNU General Public License v3.0':
+      return 'This project is licensed under the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0).';
+    case 'MIT License':
+      return 'This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).';
+    case 'BSD 2-Clause "Simplified" License':
+      return 'This project is licensed under the [BSD 2-Clause "Simplified" License](https://opensource.org/licenses/BSD-2-Clause).';
+    case 'BSD 3-Clause "New" or "Revised" License':
+      return 'This project is licensed under the [BSD 3-Clause "New" or "Revised" License](https://opensource.org/licenses/BSD-3-Clause).';
+    case 'Boost Software License 1.0':
+      return 'This project is licensed under the [Boost Software License 1.0](https://www.boost.org/LICENSE_1_0.txt).';
+    case 'Creative Commons Zero v1.0 Universal':
+      return 'This project is licensed under the [Creative Commons Zero v1.0 Universal](http://creativecommons.org/publicdomain/zero/1.0/).';
+    case 'GNU Affero General Public License v3.0':
+      return 'This project is licensed under the [GNU Affero General Public License v3.0](https://www.gnu.org/licenses/agpl-3.0).';
+    case 'GNU General Public License v2.0':
+      return 'This project is licensed under the [GNU General Public License v2.0](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html).';
+    case 'Mozilla Public License 2.0':
+      return 'This project is licensed under the [Mozilla Public License 2.0](https://opensource.org/licenses/MPL-2.0).';
+    case 'The Unlicense':
+      return 'This project is licensed under the [The Unlicense](http://unlicense.org/).';
+    default:
+      return '';
+  }
+}
 
 
 
-//I was having trouble generating the markdown if the user chooses not to include
-//some of the information. I'm going to rewrite this to be conditional statements, 
-//so that the program will still create a file if the user doesn't know certain things yet
+//I was having trouble generating the markdown if the user chose not to include certain information. I chose to handle this by adding conditional statements for each section that they could input so that there could be more flexibility in the material generated. This way, the user can create the readme if they still didn't have some of the information needed yet.
+
 function generateMarkdown(data) {
+  //defining in a larger scope so that I can use throughout the markdown 
+  const licenseBadge = renderLicenseBadge(data.license);
+  const licenseLink = renderLicenseLink(data.license);
+  const licenseSection = renderLicenseSection(data.license);
 
-  let markdown = `# ${data.title}\n\n## Description\n\n`;
+  let markdown = '';
+
+  if(data.title) {
+    markdown += `# ${data.title}`;
+  }
+
+  if(data.license) {
+    markdown += ` ${licenseBadge}\n`
+  }
+  
+  if(data.why || data.what || data.languages || data.specificLanguage) {
+    markdown += `\n## Description\n\n`;
+  }
+  
 
   if (data.why) {
     markdown += `I created this project ${data.why}.\n`;
@@ -107,10 +201,11 @@ function generateMarkdown(data) {
   }
 
   if (data.confirmLicense && data.license) {
+    
     markdown += 
     `\n<a id="license"></a>
-    \n### License
-    \n${data.license}\n`;
+    \n### License ${licenseBadge}
+    \n${licenseSection}(${licenseLink})\n`;
   }
 
   if (data.confirmContributers && data.user || data.tutorial || data.ai) {
@@ -161,27 +256,3 @@ function generateMarkdown(data) {
 }
 
 module.exports = generateMarkdown;
-
-// WHEN I am prompted for information about my application repository
-// THEN a high-quality, professional README.md is generated with the title of my project and sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
-
-// WHEN I enter my project title
-// THEN this is displayed as the title of the README
-
-// WHEN I enter a description, installation instructions, usage information, contribution guidelines, and test instructions
-// THEN this information is added to the sections of the README entitled Description, Installation, Usage, Contributing, and Tests
-
-// WHEN I enter my GitHub username
-// THEN this is added to the section of the README entitled Questions, with a link to my GitHub profile
-
-// WHEN I enter my email address
-// THEN this is added to the section of the README entitled Questions, with instructions on how to reach me with additional questions
-
-// WHEN I click on the links in the Table of Contents
-// THEN I am taken to the corresponding section of the README
-
-
-
-// - Tests
-  //Q: What are tests that are included in your project for the user to see that it is running properly/to see clearly where there is an error
-
