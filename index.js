@@ -4,10 +4,9 @@ const fs = require('fs');
 const generateMarkdown = require('./Develop/utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
-
-inquirer
-    .prompt([
     
+const questions = [
+
         //Title of the project
         {
             type: 'input',
@@ -98,6 +97,7 @@ inquirer
                 'GNU General Public License v2.0',
                 'Mozilla Public License 2.0',
                 'The Unlicense',
+                'None'
             ],
             when: (answers) => 
                 answers.confirmLicense === true,
@@ -156,7 +156,7 @@ inquirer
         {
             type: 'input',
             name: 'test',
-            message: 'How do you test your program?',
+            message: 'What command do you run to test your program?',
             when: (answers) => 
                 answers.confirmTests === true,
         },
@@ -177,17 +177,8 @@ inquirer
             type: 'input',
             name: 'github',
             message: 'Please type your GitHub username',
-        },
-    ])
-    .then((answers) => {
-        console.log(answers);
-        //this was from Node Day 2 lecture
-        //Naming the file with the users answers
-        const filename = `${answers.title.toLowerCase().split(' ').join('')}README.md`;
-        writeToFile(filename, answers);
-    }
-    )
-
+        }
+];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
@@ -202,7 +193,14 @@ function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 function init() {
-    //this is where inquirer will no go
+    inquirer.prompt(questions)
+    .then((answers) => {
+        console.log(answers);
+        //this was from Node Day 2 lecture
+        //Naming the file with the users answers
+        const filename = `${answers.title.toLowerCase().split(' ').join('')}README.md`;
+        writeToFile(filename, answers);
+    })
 }
 
 // Function call to initialize app

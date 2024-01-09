@@ -78,6 +78,10 @@ function generateMarkdown(data) {
     markdown += `In this project, I used the following coding languages: ${data.languages.join(', ')}.\n`;
   }
 
+  if(data.specificLanguage) {
+    markdown += `${data.specificLanguage}`;
+  }
+
   markdown += 
   `\n## Table of Contents\n
 
