@@ -1,9 +1,9 @@
-# Professional README Generator [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+# Professional Readme Generator [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
 
-I created this project to quickly create a professional README for a new project.
-This project creates a professional README for a new project using node.js and the inquirer package.
+I created this project To quickly create a professional README for a new project.
+This project Creates a professional README for a new project using node.js and the inquirer package..
 In this project, I used the following coding languages:  JavaScript,  Node.
 
 ## Table of Contents
@@ -14,7 +14,6 @@ In this project, I used the following coding languages:  JavaScript,  Node.
   - [License](#license)
   - [Contributers](#contributers)
   - [Tests](#tests)
-  - [Video](#video)
   - [Questions](#questions)
 
 <a id="installation"></a>
@@ -39,22 +38,21 @@ This project is licensed under the [MIT License](https://opensource.org/licenses
     
 ### Contributers
 
-The following AI program(s) were used during the coding process: chatGPT for help with the generateMarkdown template, Xpert Learning Assistant for help with the inquirer package.
+The following GitHub user(s) contributed: ‘Add GitHub users here’
+The following tutorial(s) were used during the coding process: ‘Add online tutorials here’ 
+The following AI program(s) were used during the coding process: ‘Add AI programs here’
+
 
 <a id="tests"></a>
     
 ### Tests
+
     
 Run node index.js in the terminal
-
-<a id="video"></a>
-    
-### Video
-
-[Link to video of application](https://drive.google.com/file/d/1mdHhzwCe_lyKnD0x2NWBSNYwzWRBj0jC/view?usp=sharing)
 
 <a id="questions"></a>
     
 ### Questions
     
-You can find me on GitHub using my username, aaron-ross-sanchez.
+If you have any questions about this application, you can reach me at example.email@gmail.com.
+You can find me on GitHub using my username, github-username.

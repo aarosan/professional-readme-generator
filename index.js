@@ -198,7 +198,7 @@ function init() {
         console.log(answers);
         //this was from Node Day 2 lecture
         //Naming the file with the users answers
-        const filename = `${answers.title.toLowerCase().split(' ').join('')}README.md`;
+        const filename = `${answers.title.toLowerCase().split(' ').join('')}.md`;
         writeToFile(filename, answers);
     })
 }

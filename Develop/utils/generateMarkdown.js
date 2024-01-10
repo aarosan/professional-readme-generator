@@ -239,7 +239,7 @@ function generateMarkdown(data) {
   if (data.confirmQuestions && data.email || data.github) {
     markdown +=
     `\n<a id="questions"></a>
-    \n### Questions\n`;
+    \n### Questions`;
   }
 
   if (data.email) {
