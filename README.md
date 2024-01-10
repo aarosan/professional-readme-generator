@@ -13,7 +13,6 @@ In this project, I used the following coding languages:  JavaScript,  Node.
   - [Usage](#usage)
   - [License](#license)
   - [Contributers](#contributers)
-  - [Tests](#tests)
   - [Video](#video)
   - [Questions](#questions)
 
@@ -40,12 +39,6 @@ This project is licensed under the [MIT License](https://opensource.org/licenses
 ### Contributers
 
 The following AI program(s) were used during the coding process: chatGPT for help with the generateMarkdown template, Xpert Learning Assistant for help with the inquirer package.
-
-<a id="tests"></a>
-    
-### Tests
-    
-Run node index.js in the terminal
 
 <a id="video"></a>
     
